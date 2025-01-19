@@ -40,11 +40,22 @@ public class Main {
                     }
                     break;
                 case 3:
-                    program.addPergunta("C:\\Sistema de Cadastro\\formulario.txt", "nova pergunta");
+                    System.out.print("digite o caminho do formulario: ");
+                    String caminho = sc.nextLine();
+                    System.out.print("digite a pergunta: ");
+                    String pergunta = sc.nextLine();
+                    program.addPergunta(caminho, pergunta);
                     break;
                 case 4:
+                    System.out.print("digite o numero da pergunta: ");
+                    int numberPergunta = sc.nextInt();
+                    sc.nextLine();
                     program.delPergunta("5");
                     break;
+                case 5:
+                    System.out.print("digite o nome do usuario: ");
+                    String nameUser = sc.nextLine();
+                    user.buscaUsers(nameUser);
                 case 6:
                     break;
             }

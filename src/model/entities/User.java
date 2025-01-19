@@ -2,6 +2,7 @@ package model.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class User {
     private String name;
@@ -11,7 +12,7 @@ public class User {
 
     private static List<User> userList = new ArrayList<>();
 
-   public User(){
+    public User() {
 
     }
 
@@ -60,10 +61,15 @@ public class User {
         return userList;
     }
 
-    public List<User> buscaUsers(String name){
-      for (User users : userList){
+    public void buscaUsers(String name) {
 
-      }
-       return null;
+        userList.stream()
+                .filter(user -> user.getName().toLowerCase().contains(name.toLowerCase()))
+                .forEach(System.out::println);
+    }
+
+    @Override
+    public String toString() {
+        return "User: " + name;
     }
 }
